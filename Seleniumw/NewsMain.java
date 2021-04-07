@@ -1,4 +1,4 @@
-package Seleniumw;
+package NewsProject;
 
 import java.io.BufferedWriter;
 import java.io.FileOutputStream;

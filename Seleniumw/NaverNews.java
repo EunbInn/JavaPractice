@@ -1,4 +1,4 @@
-package Seleniumw;
+package NewsProject;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -14,21 +14,22 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class NaverNews {
 	final String WEB_DRIVER_ID = "webdriver.chrome.driver";
 	final String WEB_DRIVER_PATH = "C:\\Program Files\\Google\\chromedriver_win32\\chromedriver.exe";
-	WebDriver driver = new ChromeDriver();
-	Document doc;
+	WebDriver driver = new ChromeDriver(); //selenium object
+	Document doc; //jsoup object
 	
 	public String newsParsingUtil(String pressName, String pressUrl) throws IOException, InterruptedException {
 		System.setProperty(WEB_DRIVER_ID, WEB_DRIVER_PATH);
 		
 		String[] emotionN = {"좋아요","훈훈해요","슬퍼요","화나요","후속기사 원해요",
 				"팬이에요","응원해요","축하해요","기대해요","놀랐어요"};
-		String[] emotion = new String[emotionN.length];
 		//0: like, 1: warm, 2: sad, 3: angry, 4: want, 
 		//5: fan, 6: cheer, 7: congratulation, 8: expect, 9: surprise
+		String[] emotion = new String[emotionN.length];
+		
 		String date, body;
 		ArrayList<String> emN = new ArrayList<String>();
 		ArrayList<String> comment = new ArrayList<String>();		
-		String commentAll = "";
+		String commentAll = "";//
 		String emotionAll = "";
 		String title, numComment;
 			
@@ -39,11 +40,28 @@ public class NaverNews {
 		
 		//connect with url 
 		driver.get(pressUrl);
-		Thread.sleep(4000);
+		Thread.sleep(3000);
 		
 		doc = Jsoup.connect(driver.getCurrentUrl()).get();
 		
+		
+		//get title
 		title = "\"" + driver.getTitle().replace(",", "") + "\"";
+		
+		//read date
+		try {
+			Elements dateRaw = doc.select("span.t11");
+			date = dateRaw.text();
+			date = date.substring(0, date.indexOf(". 오"));
+			date = "\"" + date.replace(".", "") + "\"";
+			Thread.sleep(4000);
+		} catch (StringIndexOutOfBoundsException in) {
+			Elements dateRaw = doc.select("span.author").select("em");
+			date = dateRaw.text();
+			date = date.substring(0, date.indexOf(". 오"));
+			date = "\"" + date.replace(".", "") + "\"";
+
+		}
 		
 		//get the number of reactions against article
 		try {
@@ -76,22 +94,9 @@ public class NaverNews {
 		Elements bodyRaw = doc.select("div#articleBodyContents._article_body_contents");
 		body = bodyRaw.text().replace(",", "");
 		
-		//read date
-		try {
-			Elements dateRaw = doc.select("span.t11");
-			date = dateRaw.text();
-			date = date.substring(0, date.indexOf(". 오"));
-			date = "\"" +date.replace(".", "") + "\"";
-			Thread.sleep(4000);
-		} catch (StringIndexOutOfBoundsException in) {
-			Elements dateRaw = doc.select("span.author").select("em");
-			date = dateRaw.text();
-			date = date.substring(0, date.indexOf(". 오"));
-			date = "\"" +date.replace(".", "") + "\"";
-			
-		}
-		// number of comment
 		
+		
+		// number of comment
 		try {
 			if (pressName.contains("한겨레")) {
 				numComment = driver.findElement(By.xpath("/html/body/div[2]/table/tbody/tr/td[1]/div/div[1]/div[3]/div/div[3]/div[1]/a/span")).getText();
@@ -110,8 +115,8 @@ public class NaverNews {
 		}
 		
 		
-		//move into comment page
 		
+		//move into comment page
 		try {
 			if (pressName.contains("한겨레")) {
 				driver.findElement(By.xpath("/html/body/div[2]/table/tbody/tr/td[1]/div/div[5]/div/div/a[1]")).click();
@@ -121,9 +126,10 @@ public class NaverNews {
 				driver.findElement(By.xpath("/html/body/div[2]/table/tbody/tr/td[1]/div/div[5]/div/div[9]/a/span[2]")).click();
 				Thread.sleep(3000);
 			}
-		} catch (Exception ex) {
-			return writeCsvFile = date + "," + title + "," + pressName + "," + body + "," + "\"\",\"\"" + "," + "\"\",\"\",\"\",\"\",\"\",\"\"," 
-					+ emotionAll + "\"\"" + "," + "" + "\n";
+		} catch (Exception ex) { //if there is no comments in article, then return data without data related with comments
+			return writeCsvFile = date + "," + title + "," + pressName + "," + body + "," 
+					+ "\"0\",\"0\"" + "," + "\"0\",\"0\",\"0\",\"0\",\"0\",\"0\"," 
+					+ emotionAll + "\"0\"" + "," + "" + "\n";
 		}
 		try {
 			//Percentage of comment depending on gender
@@ -144,6 +150,8 @@ public class NaverNews {
 			comPerGender = "\"0\",\"0\"";
 			comPerAge = "\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",";
 		}
+		
+		
 		//click "more button" to get all the list of comment
 		try {
 			while (true) {
@@ -154,13 +162,11 @@ public class NaverNews {
 			//null => break
 		}
 		
-		
 		//get all comments into array
 		try {
 			int i = 1;
 			while (true) {
-				String com_xPath, like_xPath, hate_xPath;
-					 
+				String com_xPath, like_xPath, hate_xPath;			 
 				if (pressName.contains("스포츠경향")) {
 					//comment_xpath 
 					com_xPath = "/html/body/div[2]/table/tbody/tr/td[1]/div/div[2]/div/div[8]/ul/li[" + i + "]/div[1]/div/div[2]/span[1]";
@@ -178,7 +184,7 @@ public class NaverNews {
 				String like_raw = driver.findElement(By.xpath(like_xPath)).getText();
 				String hate_raw = driver.findElement(By.xpath(hate_xPath)).getText();
 				
-						
+				// [@@@]comment[like][hate][/@@@]  -> format of comments to write in csv file		
 				comment.add("[@@@]" + com_raw + "[" + like_raw + "][" + hate_raw + "][/@@@]");
 				i++;
 			}
@@ -186,20 +192,16 @@ public class NaverNews {
 			//null => break 
 		}
 		
+		
 		for (int com = 0; com < comment.size(); com++) {
 			commentAll += comment.get(com) + "";
 		}
 		
-		//date, title, press name, gender comment, age comment, 
-		//reaction 1-10, number of comments, comments detail
+		//date, title, press name, gender comment, age comment, reaction 1-10, number of comments, comments detail
 		writeCsvFile = date + "," + title + "," + pressName + "," + body + "," + comPerGender + "," + comPerAge 
 						+ emotionAll + numComment + "," + commentAll + "\n";
-		
-		System.out.println(writeCsvFile);
 
 		return writeCsvFile;
-		
-			
 	}
 	
 }
