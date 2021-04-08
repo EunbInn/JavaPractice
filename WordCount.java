@@ -7,7 +7,7 @@ public class WordCount {
 	public static void main(String[] args) { 	
 		WordCount main = new WordCount();
 		
-		main.getWordCount();
+Count()dmdslkmv
 		
 	}
 	
