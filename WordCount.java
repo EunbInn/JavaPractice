@@ -2,7 +2,7 @@ package doitnow;
 ikdmjdai
 import java.util.Scanner;
 import java.util.Stack;
-
+test!!!
 public class WordCount {
 	public static void main(String[] args) { 	
 		WordCount main = new WordCount();
