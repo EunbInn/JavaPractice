@@ -2,13 +2,18 @@ package doitnow;
 ikdmjdai
 import java.util.Scanner;
 import java.util.Stack;
-
+test!!!
 public class WordCount {
 	public static void main(String[] args) { 	
 		WordCount main = new WordCount();
 		
+<<<<<<< HEAD
 		main.getWordCount();
 	,,,,,	
+=======
+Count()dmdslkmv
+		
+>>>>>>> b144e9ab2a30ddabf864ac8f608b5f523de17f47
 	}
 	
 	Scanner sc = new Scanner(System.in);
