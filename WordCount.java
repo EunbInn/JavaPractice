@@ -8,7 +8,7 @@ public class WordCount {
 		WordCount main = new WordCount();
 		
 		main.getWordCount();
-		
+	,,,,,	
 	}
 	
 	Scanner sc = new Scanner(System.in);
