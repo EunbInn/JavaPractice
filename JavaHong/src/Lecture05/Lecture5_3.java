@@ -1,31 +1,31 @@
-package Lecture05;
-//20210412 ê¹€ì€ë¹„ ë‹¬ë ¥ ì¶œë ¥
+package JavaLecture5;
+//20210412 ±èÀººñ ´Ş·Â Ãâ·Â
 public class Lecture5_3 {
 
 	public static void main(String[] args) {
-		int k08_iWeekday = 5; //ìš”ì¼ë‹¹ 0~6ì‚¬ì´ë¡œ ë‘ê³  1ì›” ì²« ì‹œì‘ì¼ì„ ê¸ˆìš”ì¼ë¡œ ë§ì¶”ê¸° ìœ„í•´ 6ë²ˆì§¸ ë‚ ì¸ 5ë¡œ ì´ˆê¸°í™”
+int k08_iWeekday = 5; //¿äÀÏ´ç 0~6»çÀÌ·Î µÎ°í 1¿ù Ã¹ ½ÃÀÛÀÏÀ» ±İ¿äÀÏ·Î ¸ÂÃß±â À§ÇØ 6¹øÂ° ³¯ÀÎ 5·Î ÃÊ±âÈ­
 		
-		int[] k08_iEnd = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};//ì›”ë³„ ë§ˆì§€ë§‰ ë‚ ì„ ë°°ì—´ì— ì €ì¥, 2ì›” ìœ¤ë‹¬ë¡œ 29ì¼ì´ ë§ì¼
+		int[] k08_iEnd = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};//¿ùº° ¸¶Áö¸· ³¯À» ¹è¿­¿¡ ÀúÀå, 2¿ù À±´Ş·Î 29ÀÏÀÌ ¸»ÀÏ
 		
 		
-		//forë¬¸ì„ 12ì›”ê¹Œì§€ë¡œ ì´ë™
+		//for¹®À» 12¿ù±îÁö µ¹ ¼ö ÀÖµµ·Ï 0 ~ 11·Î ÁöÁ¤
 		for (int k08_iMon = 0; k08_iMon < 12; k08_iMon++) {
-			System.out.printf("\n\n         %dì›”\n", k08_iMon + 1);
-			System.out.printf("=======================\n");
-			System.out.printf(" ì¼ ì›” í™” ìˆ˜ ëª© ê¸ˆ í† \n");
-			for (int k08_i = 1; k08_i <= k08_iEnd[k08_iMon]; k08_i++) {
-				if (k08_i == 1 && k08_iWeekday != 0) {
-					for (int k08_j = 0; k08_j < k08_iWeekday; k08_j++) {
-						System.out.printf("%5s", "");
+			System.out.printf("\n\n         %d¿ù\n", k08_iMon + 1); //i°¡ 0ºÎÅÍ ½ÃÀÛÇÏ¹Ç·Î i + 1¿ù·Î Ãâ·ÂÇØ¾ßÇÔ
+			System.out.printf("=======================\n");//±¸ºĞ¼± Ãâ·Â
+			System.out.printf(" ÀÏ ¿ù È­ ¼ö ¸ñ ±İ Åä\n");//¿äÀÏ Ãâ·Â
+			for (int k08_i = 1; k08_i <= k08_iEnd[k08_iMon]; k08_i++) {//ÀÌÁß for¹® ³»¿¡´Â ³¯Â¥¸¸Å­ µ¹ ¼ö ÀÖµµ·Ï 1 ~ ÇØ´ç ¿ùÀÇ ¸¶Áö¸· ³¯·Î ¹üÀ§ ¼³Á¤ 
+				if (k08_i == 1 && k08_iWeekday != 0) { //i°¡ 1ÀÏÀÌ°í week day°¡ 0ÀÌ ¾Æ´Ò¶§
+					for (int k08_j = 0; k08_j < k08_iWeekday; k08_j++) {//weekdayÀÇ ¼ö¸¸Å­
+						System.out.printf("%5s", "");//°ø¹é Ãâ·Â
 					}
-					System.out.printf("%4.3s", k08_i + " ");
+					System.out.printf("%4.3s", k08_i + " ");//ÀÌÈÄ 1ÀÏ Ãâ·Â
 				} else {
-					System.out.printf("%5.3s", k08_i + " ");
+					System.out.printf("%5.3s", k08_i + " ");//¾Æ´Ï¶ó¸é Á¤ÇØÁø Æ÷¸ËÀ¸·Î ³¯Â¥ Ãâ·Â
 				}
-				k08_iWeekday++;
-				if (k08_iWeekday == 7) {
-					k08_iWeekday = 0;
-					System.out.printf("\n");
+				k08_iWeekday++; // weekday + 1¾¿ Ãß°¡
+				if (k08_iWeekday == 7) { //weekday°¡ 7ÀÌ µÇ¸é
+					k08_iWeekday = 0; //0À¸·Î ÃÊ±âÈ­
+					System.out.printf("\n");//ÁÙ¹Ù²Ş
 				}
 			}
 		}

@@ -1,75 +1,74 @@
-package Lecture05;
+package JavaLecture5;
 
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Scanner;
 
-//20210412 ê¹€ì€ë¹„ ì˜ìˆ˜ì¦ ì¶œë ¥
-public class Lecture5_4 {
+//20210412 ±èÀººñ ¿µ¼öÁõ Ãâ·Â
+public class Lecture5_4 {//Å¬·¡½º ¼±¾ğ
 
-	public static void main(String[] args) {
-		DecimalFormat k08_df = new DecimalFormat("###,###,###");
-		Calendar k08_cal = Calendar.getInstance();
-		SimpleDateFormat k08_sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+	public static void main(String[] args) {//¸ŞÀÎ¿¡¼­ ½ÃÀÛ
+		DecimalFormat k08_df = new DecimalFormat("###,###,###");//decimal formatÀ¸·Î ¼ıÀÚ Æ÷¸Ë ÁöÁ¤(ÄŞ¸¶Ãâ·Â)
+		Calendar k08_cal = Calendar.getInstance();//½Ã½ºÅÛ ³¯Â¥¸¦ ÀÌ¿ëÇÏ±â À§ÇØ calendar.getInstance() »ç¿ë
+		SimpleDateFormat k08_sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss"); // ³¯Â¥ Æ÷¸ËÀ» ¿µ¼öÁõ¿¡ ³ª¿Ã Æ÷¸Ë°ú ÀÏÄ¡½ÃÅ°±â
 		
-		Scanner k08_sc = new Scanner(System.in);
+		Scanner k08_sc = new Scanner(System.in);//°¡°İÀ» ÀÔ·Â¹ŞÀ» ½ºÄ³³Ê ¿ÀºêÁ§Æ® »ı¼º
 
-		int k08_iTax, k08_iOrigin;
-		int k08_iPrice = k08_sc.nextInt();
+		int k08_iTax, k08_iOrigin; //¼¼±İ°ú °¡°İ ¿ø°¡¸¦ ÀúÀåÇÒ º¯¼ö Å¸ÀÔ ÁöÁ¤ ¹× ¼±¾ğ
+		int k08_iPrice = k08_sc.nextInt();//°¡°İÀ» integer typeÀ¸·Î ÀÔ·Â¹ŞÀ½
 		// price = origin(1 + 0.1)
 		// tax = price - origin
+		// origin = price / 1.1
 		k08_iOrigin = (int) (k08_iPrice / 1.1);
+		//taxÀÇ °æ¿ì ¿ø°¡ÀÇ 10%·Î °è»êÇÏ´Âµ¥, 10%ÇÑ °ª¿¡ ¼Ò¼öÁ¡ ÀÌÇÏ ÀÚ¸®°¡ ÀÖÀ» °æ¿ì(Á¤¼öÇüÀ¸·Î º¯È¯ÇÑ °ª°ú ºñ±³)¿Í ¾Æ´Ò °æ¿ì °è»êÀ» ´Ş¸®ÇÑ´Ù
+		//tax´Â ¼Ò¼öÁ¡ ¾Æ·¡ ¼ö¸¦ Ãë±ŞÇÏÁö ¾Ê°í +1·Î ¿Ã¸²ÇÏ¿© ¹ŞÀ½.
 		if ((k08_iOrigin * 0.1) > (int) (k08_iOrigin * 0.1)) {
-			k08_iTax = (int) (k08_iOrigin * 0.1) + 1;
+			k08_iTax = (int) (k08_iOrigin * 0.1) + 1;//¼Ò¼öÁ¡ ÀÌÇÏ ÀÚ¸®°¡ ÀÖÀ» °æ¿ì ¿ø°¡¿¡ 10% °öÇÏ¿© Á¤¼öÇü º¯È¯ÇÑ °ª¿¡ + 1
 		} else {
-			k08_iTax = (int) (k08_iOrigin * 0.1);
+			k08_iTax = (int) (k08_iOrigin * 0.1);//¼Ò¼öÁ¡ ÀÌÇÏ ÀÚ¸®°¡ ¾øÀ» °æ¿ì ¿ø°¡¿¡ 10%°öÇÑ °ªÀ» Á¤¼öÇüÀ¸·Î º¯È¯
 		}
 
-		k08_iOrigin = k08_iPrice - k08_iTax;
 
-		System.out.printf("ì‹ ìš©ìŠ¹ì¸\n");
-		System.out.printf("%s%25.20s\n", "ë‹¨ë§ê¸° : 2N68665898", "ì „í‘œë²ˆí˜¸ : 041218");
-		System.out.printf("ê°€ë§¹ì  : í•œì–‘ê¹€ì¹˜ì°Œê°œ\n");
-		System.out.printf("%.35s\n%s\n", "ì£¼ ì†Œ : ê²½ê¸° ì„±ë‚¨ì‹œ ë¶„ë‹¹êµ¬ í™©ìƒˆìš¸ë¡œ 351ë²ˆê¸¸ 10 ,", "1ì¸µ");
-		System.out.printf("ëŒ€í‘œì : ìœ ì°½ì‹ \n");
-		System.out.printf("%s%28.20s\n", "ì‚¬ì—…ì : 752-53-00558", "TEL : 7055695");
-		System.out.printf("-------------------------------------------------\n");
-		System.out.printf("%s%34.20s ì›\n",k08_blank("ê¸ˆ    ì•¡", 20), k08_df.format(k08_iOrigin));
-		System.out.printf("%s%36.20s ì›\n",k08_blank("ë¶€ ê°€ ì„¸", 20), k08_df.format(k08_iTax));
-		System.out.printf("%s%34.20s ì›\n",k08_blank("í•©    ê³„", 20), k08_df.format(k08_iPrice));
-		System.out.printf("-------------------------------------------------\n");
-		System.out.printf("ìš°ë¦¬ì¹´ë“œ\n");
-		System.out.printf("%s%13.11s\n", "ì¹´ë“œë²ˆí˜¸ : 5387-20**-****-4613(S)", "ì¼ì‹œë¶ˆ");
-		System.out.printf("ê±°ë˜ì¼ì‹œ : %s\n", k08_sdf.format(k08_cal.getTime()));
-		System.out.printf("ìŠ¹ì¸ë²ˆí˜¸ : 70404427\n");
-		System.out.printf("ê±°ë˜ë²ˆí˜¸ : 357734873739\n");
-		System.out.printf("%s%22s\n", "ë§¤ì… : ë¹„ì”¨ì¹´ë“œì‚¬", "ê°€ë§¹ : 720068568");
-		System.out.printf("ì•Œë¦¼ : EDCë§¤ì¶œí‘œ\n");
-		System.out.printf("ë¬¸ì˜ : TEL)1544-4700\n");
-		System.out.printf("-------------------------------------------------\n");
-		System.out.printf("%26s\n", "* ê°ì‚¬í•©ë‹ˆë‹¤ *");
-		System.out.printf("%47s\n", "í‘œì¤€v2.08_20200212");
+		System.out.printf("½Å¿ë½ÂÀÎ\n");//¿µ¼öÁõ ÃÖ»ó´Ü ³»¿ë Ãâ·Â
+		System.out.printf("%s%25.20s\n", "´Ü¸»±â : 2N68665898", "ÀüÇ¥¹øÈ£ : 041218");//Ãâ·Â ´Ü¸»±â ¹øÈ£¿Í ÀüÇ¥¹øÈ£ Ãâ·Â
+		System.out.printf("°¡¸ÍÁ¡ : ÇÑ¾ç±èÄ¡Âî°³\n");//°¡°Ô¸í Ãâ·Â
+		System.out.printf("%.35s\n%s\n", "ÁÖ ¼Ò : °æ±â ¼º³²½Ã ºĞ´ç±¸ È²»õ¿ï·Î 351¹ø±æ 10 ,", "1Ãş");//°¡°Ô ÁÖ¼Ò Ãâ·Â
+		System.out.printf("´ëÇ¥ÀÚ : À¯Ã¢½Å\n");//°¡°Ô ´ëÇ¥¸í Ãâ·Â
+		System.out.printf("%s%28.20s\n", "»ç¾÷ÀÚ : 752-53-00558", "TEL : 7055695");//»ç¾÷ÀÚ¹øÈ£ ¹× ¸ÅÀå ÀüÈ­¹øÈ£ Ãâ·Â
+		System.out.printf("-------------------------------------------------\n");//±¸ºĞ¼± Ãâ·Â
+		System.out.printf("%s%34.20s ¿ø\n",k08_blank("±İ    ¾×", 20), k08_df.format(k08_iOrigin));//¹Ì¸® ÁöÁ¤ÇØµĞ Æ÷¸ËÀ¸·Î ¿ø°¡ Ãâ·Â
+		System.out.printf("%s%36.20s ¿ø\n",k08_blank("ºÎ °¡ ¼¼", 20), k08_df.format(k08_iTax));//¹Ì¸® ÁöÁ¤ÇØµĞ Æ÷¸ËÀ¸·Î ¼¼±İ Ãâ·Â
+		System.out.printf("%s%34.20s ¿ø\n",k08_blank("ÇÕ    °è", 20), k08_df.format(k08_iPrice));//¹Ì¸® ÁöÁ¤ÇØµĞ Æ÷¸ËÀ¸·Î ÃÑ¾× Ãâ·Â(ÀÔ·Â¹ŞÀº ±İ¾×)
+		System.out.printf("-------------------------------------------------\n");//±¸ºĞ¼± Ãâ·Â
+		System.out.printf("¿ì¸®Ä«µå\n");//ÀÌ¿ë Ä«µå Ãâ·Â
+		System.out.printf("%s%13.11s\n", "Ä«µå¹øÈ£ : 5387-20**-****-4613(S)", "ÀÏ½ÃºÒ");//Ä«µå¹øÈ£ ¹× °áÁ¦ ¹æ½Ä Ãâ·Â
+		System.out.printf("°Å·¡ÀÏ½Ã : %s\n", k08_sdf.format(k08_cal.getTime()));//¹Ì¸®ÁöÁ¤ÇØµĞ ³¯Â¥ Å¸ÀÔÀ¸·Î º¯È¯ÇÏ¿© °Å·¡ÀÏ½Ã ½Ã½ºÅÛ ³¯Â¥·Î Ãâ·Â
+		System.out.printf("½ÂÀÎ¹øÈ£ : 70404427\n");//°áÁ¦ ½ÂÀÎ¹øÈ£ Ãâ·Â
+		System.out.printf("°Å·¡¹øÈ£ : 357734873739\n");//°áÁ¦ °Å·¡ ¹øÈ£ Ãâ·Â
+		System.out.printf("%s%22s\n", "¸ÅÀÔ : ºñ¾¾Ä«µå»ç", "°¡¸Í : 720068568");//°áÁ¦ Ã³¸® Ä«µå»ç¸í ¹× °¡¸ÍÁ¡ ¹øÈ£ Ãâ·Â
+		System.out.printf("¾Ë¸² : EDC¸ÅÃâÇ¥\n");//¾Ë¸² Ãâ·Â
+		System.out.printf("¹®ÀÇ : TEL)1544-4700\n");//¹®ÀÇ ¹øÈ£ Ãâ·Â
+		System.out.printf("-------------------------------------------------\n");//±¸ºĞ¼± Ãâ·Â
+		System.out.printf("%26s\n", "* °¨»çÇÕ´Ï´Ù *");//¸ÎÀ½¸» Ãâ·Â
+		System.out.printf("%47s\n", "Ç¥ÁØv2.08_20200212");
 
 	}
 	
-	public static String k08_blank(String k08_temp, int k08_length) {
-		if (k08_temp.length() > k08_length) {
-			k08_temp = k08_temp.substring(0,k08_length);
-		}
-			int cnt = 0;
-			for (int i = 0; i < k08_temp.length(); i++) {
-				if (k08_temp.charAt(i) >= '\uAC00' && k08_temp.charAt(i) <= '\uD7A3') {
-					cnt++;
-				}
-			}
-			int k08_blank = k08_temp.length() - cnt;
-
-			for (int i = 0; i < k08_blank; i++) {
-				k08_temp += " ";
+	public static String k08_blank(String k08_temp, int k08_length) {//½ºÆ®¸µ Å¸ÀÔ°ú ÀÎÆ¼Àú Å¸ÀÔÀ» ÀÎÀÚ·Î ¹Ş°í ½ºÆ®¸µ Å¸ÀÔÀ» ¸®ÅÏÇÏ´Â ¸Ş¼­µå ¼±¾ğ
+		if (k08_temp.length() > k08_length) { // ±ÛÀÚ ÀÚÃ¼ÀÇ ±æÀÌ°¡ ÀÎÀÚ·Î ¹ŞÀº ±æÀÌº¸´Ù Å¬ ¶§
+			k08_temp = k08_temp.substring(0,k08_length); // 0-±æÀÌ ¸¸Å­ ¼­ºê½ºÆ®¸µÀ¸·Î ÀÚ¸£±â
+			
 			}
 		
-		return k08_temp;
+		int k08_blank = (k08_length * 2) - k08_temp.getBytes().length;//ÀÎÀÚ·Î¹ŞÀº ±æÀÌ*2 - ¹ÙÀÌÆ®±æÀÌ·Î Ãâ·ÂÇÒ °ø¹é ±æÀÌ ÁöÁ¤
+			
+
+		for (int i = 0; i < k08_blank; i++) { //0~°ø¹é±æÀÌ¸¸Å­ ¹İº¹¹® ½ÇÇà
+			k08_temp = k08_temp + " ";//¿À¸¥ÂÊÀ¸·Î °ø¹é ÀÕ±â
+		}
+		
+		return k08_temp; //°á°ú°ª ¸®ÅÏ
 	}
 
 }

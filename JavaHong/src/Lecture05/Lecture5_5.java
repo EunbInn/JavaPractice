@@ -1,131 +1,123 @@
-package Lecture05;
+package JavaLecture5;
 
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class Lecture5_5 {
+public class Lecture5_5 { //Å¬·¡½º ¼±¾ğ
+	
+	public static void main(String[] args) { //¸ŞÀÎ¿¡¼­ ½ÃÀÛ
+		DecimalFormat k08_df = new DecimalFormat("###,###,###"); // ¼ıÀÚ ÄŞ¸¶ Ãâ·Â ¾ç½Ä ¼³Á¤
+		Calendar k08_cal = Calendar.getInstance(); //¿äÃ» Áï½Ã ½Ã½ºÅÛ ³¯Â¥¸¦ °¡Á®¿À±â À§ÇØ Calendar.getInstance »ç¿ë
+		SimpleDateFormat k08_sdf = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss"); //½ÉÇÃ µ¥ÀÌÆ® Æ÷¸ËÀ» ÀÌ¿ëÇØ ¿µ¼öÁõ ³»¿¡ ÀÖ¾ú´ø °Í°ú µ¿ÀÏÇÑ ³¯Â¥ ¾ç½ÄÀ» »ı¼º
+		String k08_itemname1 = "Ç»¾î¿¡¾î ºñ¸»Â÷´Ü¿ë¸¶½ºÅ©(ÃÖ°í±ŞÇâ)"; // Ã¹¹øÂ° ¾ÆÀÌÅÛ ÀÌ¸§ ½ºÆ®¸µÀ¸·Î ÁöÁ¤ ¹× º¯¼ö¿¡ µ¥ÀÌÅÍ ÀúÀå
+		String k08_itemcode1 = "1031617";//Ã¹¹øÂ° ¾ÆÀÌÅÛÄÚµå¸¦ ½ºÆ®¸µÅ¸ÀÔÀ¸·Î ÁöÁ¤ÇÏ°í º¯¼ö¿¡ µ¥ÀÌÅÍ ÀúÀå
+		int k08_price1 = 3000;// Ã¹¹øÂ° ¾ÆÀÌÅÛÀÇ °¡°İ integer type ¼±¾ğ ¹× µ¥ÀÌÅÍ ÀúÀå
+		int k08_amount1 = 1;//Ã¹¹øÂ° ¾ÆÀÌÅÛ integer typeÀ¸·Î ¼±¾ğ ¹× ¼ö·® µ¥ÀÌÅÍ ÀúÀå
 
-	public static void main(String[] args) {
-		DecimalFormat k08_df = new DecimalFormat("###,###,###");
-		Calendar k08_cal = Calendar.getInstance();
-		SimpleDateFormat k08_sdf = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
-		String itemname1 = "í“¨ì–´ì—ì–´ ë¹„ë§ì°¨ë‹¨ìš©ë§ˆìŠ¤í¬(ìµœê³ ê¸‰í–¥)";
-		String itemcode1 = "1031617";
-		int price1 = 3000;
-		int amount1 = 1;
+		String k08_itemname2 = "ºê·¹µå ÁÖ±Ù±ú ÆÄ¿ìÄ¡(È²»ö)"; // µÎ¹øÂ° ¾ÆÀÌÅÛ ÀÌ¸§ ½ºÆ®¸µÀ¸·Î ÁöÁ¤ ¹× º¯¼ö¿¡ µ¥ÀÌÅÍ ÀúÀå
+		String k08_itemcode2 = "1104042";//µÎ¹øÂ° ¾ÆÀÌÅÛÄÚµå ½ºÆ®¸µÅ¸ÀÔÀ¸·Î ÁöÁ¤ÇÏ°í º¯¼ö¿¡ µ¥ÀÌÅÍ ÀúÀå
+		int k08_price2 = 1000;// µÎ¹øÂ° ¾ÆÀÌÅÛÀÇ °¡°İÀ» integer typeÀ¸·Î ¼±¾ğ ¹× µ¥ÀÌÅÍ ÀúÀå
+		int k08_amount2 = 1;//µÎ¹øÂ° ¾ÆÀÌÅÛ integer typeÀ¸·Î ¼±¾ğ ¹× ¼ö·® µ¥ÀÌÅÍ ÀúÀå
 
-		String itemname2 = "ë¸Œë ˆë“œ ì£¼ê·¼ê¹¨ íŒŒìš°ì¹˜(í™©ìƒ‰)";
-		String itemcode2 = "1104042";
-		int price2 = 1000;
-		int amount2 = 1;
-
-		String itemname3 = "ë²šê½ƒë¬´ëŠ¬ íŠ¼íŠ¼ìœ ë¦¬ê¸€ë¼ìŠ¤(330ml)";
-		String itemcode3 = "1811019";
-		int price3 = 2000;
-		int amount3 = 1;
+		String k08_itemname3 = "º¢²É¹«´Ì Æ°Æ°À¯¸®±Û¶ó½º(330ml)"; // ¼¼¹øÂ° ¾ÆÀÌÅÛ ÀÌ¸§ ½ºÆ®¸µÀ¸·Î ÁöÁ¤ ¹× º¯¼ö¿¡ µ¥ÀÌÅÍ ÀúÀå
+		String k08_itemcode3 = "1811019";//¼¼¹øÂ° ¾ÆÀÌÅÛÄÚµå¸¦ ½ºÆ®¸µÅ¸ÀÔÀ¸·Î ÁöÁ¤, º¯¼ö¿¡ µ¥ÀÌÅÍ ÀúÀå
+		int k08_price3 = 2000;// ¼¼¹øÂ° ¾ÆÀÌÅÛÀÇ °¡°İ integer type ¼±¾ğ ¹× µ¥ÀÌÅÍ ÀúÀå
+		int k08_amount3 = 1;//¼¼¹øÂ° ¾ÆÀÌÅÛ integer type ¼±¾ğ ¹× º¯¼ö¿¡ ¼ö·® µ¥ÀÌÅÍ ÀúÀå
 		
-		int sumPrice = price1 + price2 + price3;
-		int originPrice = (int) (sumPrice / 1.1);
-		int taxPrice =  0;
+		int k08_sumPrice = k08_price1 + k08_price2 + k08_price3; // integer typeÀÇ º¯¼ö ¼±¾ğ ¹× ¾ÆÀÌÅÛ °¡°İÀÇ ÃÑÇÕ ÀúÀå
+		int k08_originPrice = (int) (k08_sumPrice / 1.1); //total price = original price + tax -> tp = orp + (orp * 0.1) -> orp = tp / 1.1
+		int k08_taxPrice =  0; //tax°ªÀ» ÀúÀåÇÒ º¯¼ö¸¦ integer typeÀ¸·Î ¼±¾ğ ¹× 0À¸·Î º¯¼ö °ª ÀúÀå;
 		
-		if ((int) (originPrice * 0.1) < (originPrice / 0.1)) {
-			taxPrice = (int) (originPrice * 0.1) + 1;
+		//taxÀÇ °æ¿ì ¿ø°¡ÀÇ 10%·Î °è»êÇÏ´Âµ¥, 10%ÇÑ °ª¿¡ ¼Ò¼öÁ¡ ÀÌÇÏ ÀÚ¸®°¡ ÀÖÀ» °æ¿ì(Á¤¼öÇüÀ¸·Î º¯È¯ÇÑ °ª°ú ºñ±³)¿Í ¾Æ´Ò °æ¿ì °è»êÀ» ´Ş¸®ÇÑ´Ù
+		//tax´Â ¼Ò¼öÁ¡ ¾Æ·¡ ¼ö¸¦ Ãë±ŞÇÏÁö ¾Ê°í +1·Î ¿Ã¸²ÇÏ¿© ¹Ş´Â ±î´ßÀÌ´Ù.
+		if ((int) (k08_originPrice * 0.1) < (k08_originPrice * 0.1)) { 
+			k08_taxPrice = (int) (k08_originPrice * 0.1) + 1;//¼Ò¼öÁ¡ ÀÌÇÏ ÀÚ¸®°¡ ÀÖÀ» °æ¿ì ¿ø°¡¿¡ 10% °öÇÏ¿© Á¤¼öÇü º¯È¯ÇÑ °ª¿¡ + 1
 		} else {
-			taxPrice = (int) (originPrice * 0.1);
+			k08_taxPrice = (int) (k08_originPrice * 0.1);//¼Ò¼öÁ¡ ÀÌÇÏ ÀÚ¸®°¡ ¾øÀ» °æ¿ì ¿ø°¡¿¡ 10%°öÇÑ °ªÀ» Á¤¼öÇüÀ¸·Î º¯È¯
 		}
 		
-		originPrice = sumPrice - taxPrice;
-		
-		System.out.printf("\n                \"êµ­ë¯¼ê°€ê²Œë‹¤ì´ì†Œ\"\n");
-		System.out.printf("(ì£¼)ì•„ì„±ë‹¤ì´ì†Œ_ë¶„ë‹¹ì„œí˜„ì \n");
-		System.out.printf("ì „í™”:031-702-6016\n");
-		System.out.printf("ë³¸ì‚¬:ì„œìš¸ ê°•ë‚¨êµ¬ ë‚¨ë¶€ìˆœí™˜ë¡œ 2748 (ë„ê³¡ë™)\n");
-		System.out.printf("ëŒ€í‘œ:ë°•ì •ë¶€,ì‹ í˜¸ì„­ 213-81-52063\n");
-		System.out.printf("ë§¤ì¥:ê²½ê¸°ë„ ì„±ë‚¨ì‹œ ë¶„ë‹¹êµ¬ ë¶„ë‹¹ë¡œ53ë²ˆê¸¸ 11 (ì„œí˜„\në™)\n");
-		System.out.printf("================================================\n");
-		System.out.printf("%26s\n%28s\n","ì†Œë¹„ìì¤‘ì‹¬ê²½ì˜(CCM) ì¸ì¦ê¸°ì—…","ISO 9001 í’ˆì§ˆê²½ì˜ì‹œìŠ¤í…œ ì¸ì¦ê¸°ì—…");
-		System.out.printf("================================================\n");
-		System.out.printf("         êµí™˜/í™˜ë¶ˆ 14ì¼(04ì›”26ì¼)ì´ë‚´\n");
-		System.out.printf("(ì „ì)ì˜ìˆ˜ì¦, ê²°ì œì¹´ë“œ ì§€ì°¸ í›„ êµ¬ì…ë§¤ì¥ì—ì„œ ê°€ëŠ¥\n");
-		System.out.printf("       í¬ì¥/ê°€ê²© íƒ í›¼ì†ì‹œ êµí™˜/í™˜ë¶ˆ ë¶ˆê°€\n");
-		System.out.printf("         ì²´í¬ì¹´ë“œ ì·¨ì†Œ ì‹œ ìµœëŒ€ 7ì¼ ì†Œìš”\n");
-		System.out.printf("================================================\n");
-		System.out.printf("[POS 1058231]%24s\n", k08_sdf.format(k08_cal.getTime()));
-		System.out.printf("================================================\n");
-		System.out.printf("%s%8.8s%4s%8s\n", blank(itemname1, 14), k08_df.format(price1) + "", amount1 + "", k08_df.format(price1 * amount1) + "");
-		System.out.printf("[%s]\n", itemcode1);
-		System.out.printf("%s%8.8s%4s%8s\n", blank(itemname2, 14), k08_df.format(price2) + "", amount2 + "", k08_df.format(price2 * amount2) + "");
-		System.out.printf("[%s]\n", itemcode2);
-		System.out.printf("%s%8.8s%4s%8s\n", blank(itemname3, 14), k08_df.format(price3) + "", amount3 + "", k08_df.format(price3 * amount3) + "");
-		System.out.printf("[%s]\n", itemcode3);
-		System.out.printf("================================================\n");
-		System.out.printf("%s%20s\n",blank2("ê³¼ì„¸í•©ê³„",3), k08_df.format(originPrice));
-		System.out.printf("%s%20s\n", blank2("ë¶€ê°€ì„¸",2), k08_df.format(taxPrice));
-		System.out.printf("------------------------------------------------\n");
-		System.out.printf("íŒë§¤í•©ê³„%40s\n", k08_df.format(sumPrice));
-		System.out.printf("================================================\n");
-		System.out.printf("ì‹ ìš©ì¹´ë“œ%40s\n", k08_df.format(sumPrice));
-		System.out.printf("------------------------------------------------\n");
-		System.out.printf("ìš°ë¦¬ì¹´ë“œ                        538720**********\n");
-		System.out.printf("ìŠ¹ì¸ë²ˆí˜¸ 77982843(0)%18s %s\n","ìŠ¹ì¸ê¸ˆì•¡",k08_df.format(sumPrice));
-		System.out.printf("================================================\n");
-		System.out.printf("%27s ë¶„ë‹¹ì„œí˜„ì \n", k08_sdf.format(k08_cal.getTime()));
-		System.out.printf("ìƒí’ˆ ë° ê¸°íƒ€ ë¬¸ì˜ : 1522-4400\n");
-		System.out.printf("ë©¤ë²„ì‹­ ë° ìƒµë‹¤ì´ì†Œ ê´€ë ¨ ë¬¸ì˜ : 1599-2211\n\n");
-		System.out.printf("               2112820610158231\n");
-		System.out.printf("------------------------------------------------\n");
-		System.out.println(" â—ˆ ë‹¤ì´ì†Œ ë©¤ë²„ì‹­ ì•± ë˜ëŠ” í™ˆí˜ì´ì§€ì— ì ‘ì†í•˜ì…”ì„œ\n   íšŒì›ê°€ì… í›„ ë‹¤ì–‘í•œ í˜œíƒì„ ëˆ„ë ¤ë³´ì„¸ìš”! â—ˆ");
+		System.out.printf("\n                \"±¹¹Î°¡°Ô´ÙÀÌ¼Ò\"\n"); //ÇÑÁÙ °³Çà ÈÄ Á¦¸ñºÎºĞ Ãâ·Â Å«µû¿ÈÇ¥´Â ¿ª½½·¹½Ã¸¦ »ç¿ëÇÏ¿© Ç¥Çö
+		System.out.printf("(ÁÖ)¾Æ¼º´ÙÀÌ¼Ò_ºĞ´ç¼­ÇöÁ¡\n");//ÁöÁ¡¸í Ãâ·Â
+		System.out.printf("ÀüÈ­:031-702-6016\n");//ÀüÈ­¹øÈ£ Ãâ·Â
+		System.out.printf("º»»ç:¼­¿ï °­³²±¸ ³²ºÎ¼øÈ¯·Î 2748 (µµ°îµ¿)\n");//º»»ç ÁÖ¼Ò Ãâ·Â
+		System.out.printf("´ëÇ¥:¹ÚÁ¤ºÎ,½ÅÈ£¼· 213-81-52063\n");//´ëÇ¥¸í°ú »ç¾÷ÀÚ¹øÈ£ Ãâ·Â
+		System.out.printf("¸ÅÀå:°æ±âµµ ¼º³²½Ã ºĞ´ç±¸ ºĞ´ç·Î53¹ø±æ 11 (¼­Çö\nµ¿)\n");//ºĞ´çÁöÁ¡ÀÇ ÁÖ¼Ò Ãâ·Â
+		System.out.printf("================================================\n");//±¸ºĞ¼± Ãâ·Â
+		System.out.printf("%26s\n%28s\n","¼ÒºñÀÚÁß½É°æ¿µ(CCM) ÀÎÁõ±â¾÷","ISO 9001 Ç°Áú°æ¿µ½Ã½ºÅÛ ÀÎÁõ±â¾÷"); //¼ÒºñÀÚ Áß½É°æ¿µ°ú Ç°Áú°æ¿µ½Ã½ºÅÛ ÀÎÁõ ³»¿ë Ãâ·Â
+		System.out.printf("================================================\n");//±¸ºĞ¼± Ãâ·Â
+		System.out.printf("         ±³È¯/È¯ºÒ 14ÀÏ(04¿ù26ÀÏ)ÀÌ³»\n");//±³È¯, È¯ºÒÀÇ °¡´É ±â°£ Ãâ·Â
+		System.out.printf("(ÀüÀÚ)¿µ¼öÁõ, °áÁ¦Ä«µå ÁöÂü ÈÄ ±¸ÀÔ¸ÅÀå¿¡¼­ °¡´É\n");//±³È¯ È¯ºÒ ¹æ¹ı ¾È³» ³»¿ë Ãâ·Â
+		System.out.printf("       Æ÷Àå/°¡°İ ÅÃ ÈÑ¼Õ½Ã ±³È¯/È¯ºÒ ºÒ°¡\n"); // ±³È¯ È¯ºÒ ºÒ°¡ ³»¿ë Ãâ·Â
+		System.out.printf("         Ã¼Å©Ä«µå Ãë¼Ò ½Ã ÃÖ´ë 7ÀÏ ¼Ò¿ä\n"); //Ä«µå Ãë¼Ò °ü·Ã ³»¿ë Ãâ·Â
+		System.out.printf("================================================\n");//±¸ºĞ¼± Ãâ·Â
+		System.out.printf("[POS 1058231]%24s\n", k08_sdf.format(k08_cal.getTime()));//Æ÷½º ¹øÈ£¿Í ¹Ì¸® ÁöÁ¤ÇØµĞ ³¯Â¥ Æ÷¸ËÀ¸·Î ³¯Â¥ Ãâ·Â
+		System.out.printf("================================================\n");//±¸ºĞ¼± Ãâ·Â
+		//blank¸Ş¼­µå¸¦ ÀÌ¿ëÇÏ¿© ¾ÆÀÌÅÛ ÀÌ¸§À» ¿øÇÏ´Â ±ÛÀÚ¼ö¸¸Å­ ÀÚ¸£°í °ø¹é ºÎ¿©, decimal format ÀÌ¿ëÇÏ¿© ´Ü°¡¿Í ÃÑ °¡°İ(´Ü°¡*¼ö·®)¿¡ ÄŞ¸¶ Æ÷ÇÔÇÏ¿© Ãâ·Â
+		System.out.printf("%s%8.8s%4s%8s\n", k08_blank(k08_itemname1, 14), k08_df.format(k08_price1),
+				k08_amount1 + "", k08_df.format(k08_price1 * k08_amount1));
+		System.out.printf("[%s]\n", k08_itemcode1);//Ã¹¹øÂ° ¾ÆÀÌÅÛÄÚµå Ãâ·Â
+		//blank¸Ş¼­µå¸¦ ÀÌ¿ëÇÏ¿© ¾ÆÀÌÅÛ ÀÌ¸§À» ¿øÇÏ´Â ±ÛÀÚ¼ö¸¸Å­ ÀÚ¸£°í °ø¹é ºÎ¿©, decimal format ÀÌ¿ëÇÏ¿© ´Ü°¡¿Í ÃÑ °¡°İ(´Ü°¡*¼ö·®)¿¡ ÄŞ¸¶ Æ÷ÇÔÇÏ¿© Ãâ·Â
+		System.out.printf("%s%8.8s%4s%8s\n", k08_blank(k08_itemname2, 14), k08_df.format(k08_price2),
+				k08_amount2 + "", k08_df.format(k08_price2 * k08_amount2));
+		System.out.printf("[%s]\n", k08_itemcode2);//µÎ¹øÂ° ¾ÆÀÌÅÛÄÚµå Ãâ·Â
+		//blank¸Ş¼­µå¸¦ ÀÌ¿ëÇÏ¿© ¾ÆÀÌÅÛ ÀÌ¸§À» ¿øÇÏ´Â ±ÛÀÚ¼ö¸¸Å­ ÀÚ¸£°í °ø¹é ºÎ¿©, decimal format ÀÌ¿ëÇÏ¿© ´Ü°¡¿Í ÃÑ °¡°İ(´Ü°¡*¼ö·®)¿¡ ÄŞ¸¶ Æ÷ÇÔÇÏ¿© Ãâ·Â
+		System.out.printf("%s%8.8s%4s%8s\n", k08_blank(k08_itemname3, 14), k08_df.format(k08_price3),
+				k08_amount3 + "", k08_df.format(k08_price3 * k08_amount3));
+		System.out.printf("[%s]\n", k08_itemcode3);//¼¼¹øÂ° ¾ÆÀÌÅÛÄÚµå Ãâ·Â
+		System.out.printf("================================================\n");//±¸ºĞ¼± Ãâ·Â
+		System.out.printf("%s%20s\n",k08_blank2("°ú¼¼ÇÕ°è",15), k08_df.format(k08_originPrice));//¿ŞÂÊ °ø¹éÃâ·ÂÇØÁÖ´Â blank2¸Ş¼­µå·Î °ú¼¼ÇÕ°è ±ÛÀÚ ÆíÁı, ¿ø°¡ ÇÕ°è Ãâ·Â
+		System.out.printf("%s%20s\n", k08_blank2("ºÎ°¡¼¼",15), k08_df.format(k08_taxPrice));//¿ŞÂÊ °ø¹éÃâ·ÂÇØÁÖ´Â blank2¸Ş¼­µå·Î ºÎ°¡¼¼ ±ÛÀÚ ÆíÁı, ¿ø°¡ ÇÕ°èÀÇ ¼¼±İ Ãâ·Â
+		System.out.printf("------------------------------------------------\n");//±¸ºĞ¼® Ãâ·Â
+		System.out.printf("ÆÇ¸ÅÇÕ°è%40s\n", k08_df.format(k08_sumPrice));//ÁöÁ¤µÈ ¼ıÀÚÆ÷¸ËÀ¸·Î º¯È¯ÇÏ¿© ÃÑÇÕ°è±İ¾× Ãâ·Â
+		System.out.printf("================================================\n");//±¸ºĞ¼± Ãâ·Â
+		System.out.printf("½Å¿ëÄ«µå%40s\n", k08_df.format(k08_sumPrice));//½Å¿ëÄ«µå °áÁ¦±İ¾×Àº ÆÇ¸ÅÇÕ°è¿Í µ¿ÀÏÇÑ ±İ¾×À¸·Î Ãâ·Â
+		System.out.printf("------------------------------------------------\n");//±¸ºĞ¼± Ãâ·Â
+		System.out.printf("¿ì¸®Ä«µå                        538720**********\n");//Ä«µå»ç ¹× Ä«µå¹øÈ£ Ãâ·Â
+		System.out.printf("½ÂÀÎ¹øÈ£ 77982843(0)%18s %s\n","½ÂÀÎ±İ¾×",k08_df.format(k08_sumPrice));//°áÁ¦ ½ÂÀÎ ¹øÈ£¿Í ½ÂÀÎ ±İ¾×(ÆÇ¸ÅÇÕ°è) Ãâ·Â
+		System.out.printf("================================================\n");//±¸ºĞ¼± Ãâ·Â
+		System.out.printf("%27s ºĞ´ç¼­ÇöÁ¡\n", k08_sdf.format(k08_cal.getTime()));//ÁöÁ¡¸í°ú °áÁ¦ÀÏÀÚ Ãâ·Â
+		System.out.printf("»óÇ° ¹× ±âÅ¸ ¹®ÀÇ : 1522-4400\n");//»óÇ° ¹× ±âÅ¸¹®ÀÇ ¹øÈ£ Ãâ·Â
+		System.out.printf("¸â¹ö½Ê ¹× ¼¥´ÙÀÌ¼Ò °ü·Ã ¹®ÀÇ : 1599-2211\n\n");//¸â¹ö½Ê ¹× ´ÙÀÌ¼Ò °ü·Ã ¹®ÀÇ ¹øÈ£ Ãâ·Â
+		System.out.printf("               2112820610158231\n");//¹ÙÄÚµå ¹øÈ£ Ãâ·Â
+		System.out.printf("------------------------------------------------\n");//±¸ºĞ¼± Ãâ·Â
+		System.out.println(" ¢Â ´ÙÀÌ¼Ò ¸â¹ö½Ê ¾Û ¶Ç´Â È¨ÆäÀÌÁö¿¡ Á¢¼ÓÇÏ¼Å¼­\n   È¸¿ø°¡ÀÔ ÈÄ ´Ù¾çÇÑ ÇıÅÃÀ» ´©·Áº¸¼¼¿ä! ¢Â");//ºê·£µå È¨ÆäÀÌÁö ¹× ¾îÇÃ È«º¸±Û Ãâ·Â
 		
 
 	}
-
-	public static String blank(String k08_temp, int length) {
+	public static String k08_blank(String k08_temp, int k08_length) { //½ºÆ®¸µ Å¸ÀÔ°ú ÀÎÆ¼Àú Å¸ÀÔÀ» ÀÎÀÚ·Î ¹Ş°í ½ºÆ®¸µ Å¸ÀÔÀ» ¸®ÅÏÇÏ´Â ¸Ş¼­µå ¼±¾ğ
 		
-		if (k08_temp.length() > length) {
-			k08_temp = k08_temp.substring(0,length);
+		if (k08_temp.length() > k08_length) { // ±ÛÀÚ ÀÚÃ¼ÀÇ ±æÀÌ°¡ ÀÎÀÚ·Î ¹ŞÀº ±æÀÌº¸´Ù Å¬ ¶§
+			k08_temp = k08_temp.substring(0,k08_length); // 0-±æÀÌ ¸¸Å­ ¼­ºê½ºÆ®¸µÀ¸·Î ÀÚ¸£±â
 			
-			int cnt = 0;
-			for (int i = 0; i < k08_temp.length(); i++) {
-				if (k08_temp.charAt(i) >= '\uAC00' && k08_temp.charAt(i) <= '\uD7A3') {
-					cnt++;
-				}
 			}
-			int k08_blank = k08_temp.length() - cnt;
+		
+		int k08_blank = (k08_length * 2) - k08_temp.getBytes().length;//ÀÎÀÚ·Î¹ŞÀº ±æÀÌ*2 - ¹ÙÀÌÆ®±æÀÌ·Î Ãâ·ÂÇÒ °ø¹é ±æÀÌ ÁöÁ¤
+			
 
-			for (int i = 0; i < k08_blank; i++) {
-				k08_temp += " ";
-			}
+		for (int i = 0; i < k08_blank; i++) { //0~°ø¹é±æÀÌ¸¸Å­ ¹İº¹¹® ½ÇÇà
+			k08_temp = k08_temp + " ";//¿À¸¥ÂÊÀ¸·Î °ø¹é ÀÕ±â
 		}
-		return k08_temp;
+		
+		return k08_temp; //°á°ú°ª ¸®ÅÏ
 	}
 	
-	public static String blank2(String a, int length) {
-		String k08_temp =  "             " + a;
+	public static String k08_blank2(String k08_temp, int k08_length) {//½ºÆ®¸µ Å¸ÀÔ°ú ÀÎÆ¼Àú Å¸ÀÔÀ» ÀÎÀÚ·Î ¹Ş°í ½ºÆ®¸µ Å¸ÀÔÀ» ¸®ÅÏÇÏ´Â ¸Ş¼­µå ¼±¾ğ
 		
-		k08_temp = k08_temp.substring(length);
-
-		int cnt = 0;
-		for (int i = 0; i < k08_temp.length(); i++) {
-			if (k08_temp.charAt(i) >= '\uAC00' && k08_temp.charAt(i) <= '\uD7A3') {
-				cnt++;
+		if (k08_temp.length() > k08_length) { // ±ÛÀÚ ÀÚÃ¼ÀÇ ±æÀÌ°¡ ÀÎÀÚ·Î ¹ŞÀº ±æÀÌº¸´Ù Å¬ ¶§
+			k08_temp = k08_temp.substring(0,k08_length); // 0-±æÀÌ ¸¸Å­ ¼­ºê½ºÆ®¸µÀ¸·Î ÀÚ¸£±â
+			
 			}
-		}
-		int k08_blank = k08_temp.length() - cnt;
+		
+		int k08_blank = (k08_length * 2) - k08_temp.getBytes().length;//ÀÎÀÚ·Î¹ŞÀº ±æÀÌ*2 - ¹ÙÀÌÆ®±æÀÌ·Î Ãâ·ÂÇÒ °ø¹é ±æÀÌ ÁöÁ¤
+			
 
-		for (int i = 0; i < k08_blank; i++) {
-			k08_temp = " " + k08_temp;
+
+		for (int i = 0; i < k08_blank; i++) {//0~°ø¹é±æÀÌ¸¸Å­ ¹İº¹¹® ½ÇÇà
+			k08_temp = " " + k08_temp;//¿ŞÂÊÀ¸·Î °ø¹é ÀÕ±â
 		}
 
-		return k08_temp;
+		return k08_temp;//°á°ú°ª ¸®ÅÏ
 	}
 	
-	public static String blank3(String a, int length) {
-		String k08_temp = a + "                                     ";
-		
-		String k08_blank = new String(k08_temp.getBytes(), 0, length);
-		
-		return k08_blank;
-		
-	}
 }
