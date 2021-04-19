@@ -1,4 +1,4 @@
-package JavaLecture5;
+package Lecture05;
 
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
@@ -10,8 +10,8 @@ public class Lecture5_6 {
 		Calendar cal = Calendar.getInstance();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 		DecimalFormat df = new DecimalFormat("###,###,###,###");
-		String[] itemName = {"¿¬¼¼ ¸¶Ä«´Ù¹Ì¾Æ ÃÊÄÚ¿ìÀ¯","ºñºñ°í ±èÄ¡¸¸µÎ","¾ÈÁÖ¾ß ºÒ¸·Ã¢ººÀ½","´ÙÅ©ÃÊÄÚ¸¶µé·» 500g","»ï¸³ ÃËÃËÇÑ ¸ğ´× ½Ä»§",
-				"½Ä¹°³ª¶ó ¹Ùµğ¿ö½Ã ¶óº¥´õ 200ml","»şÇÁ¶õ ¼¶À¯À¯¿¬Á¦ ¸®ÇÊ¿ë 500ml","²¿ºÏÄ¨ ÃÊÄÚÃò·¯½º¸À","ÄÚÄ«Äİ¶ó Á¦·ÎÄİ¶ó 330ml","ÇÏ¾á³ª¶ó Á¡º¸·ÑÈŞÁö(±×¸°) 30ÀÔ",
+		String[] itemName = {"ì—°ì„¸ ë§ˆì¹´ë‹¤ë¯¸ì•„ ì´ˆì½”ìš°ìœ ","ë¹„ë¹„ê³  ê¹€ì¹˜ë§Œë‘","ì•ˆì£¼ì•¼ ë¶ˆë§‰ì°½ë³¶ìŒ","ë‹¤í¬ì´ˆì½”ë§ˆë“¤ë Œ 500g","ì‚¼ë¦½ ì´‰ì´‰í•œ ëª¨ë‹ ì‹ë¹µ",
+				"ì‹ë¬¼ë‚˜ë¼ ë°”ë””ì›Œì‹œ ë¼ë²¤ë” 200ml","ìƒ¤í”„ë€ ì„¬ìœ ìœ ì—°ì œ ë¦¬í•„ìš© 500ml","ê¼¬ë¶ì¹© ì´ˆì½”ì¸„ëŸ¬ìŠ¤ë§›","ì½”ì¹´ì½œë¼ ì œë¡œì½œë¼ 330ml","í•˜ì–€ë‚˜ë¼ ì ë³´ë¡¤íœ´ì§€(ê·¸ë¦°) 30ì…",
 				"","","","","","","","","","","","","","","","","","","","","",""};
 		int[] itemPrice = {1200,4000,7300,5600,3000,
 				7250,8000,1500,1200,21000,
@@ -23,17 +23,17 @@ public class Lecture5_6 {
 				true,true,false,true,true,true,true,true,true,true,
 				true,true,false,true,true,true,true,true,true,true,true,false};
 		
-		System.out.printf("                   ÀÌ¸¶Æ® Á×ÀüÁ¡ (031)888-1234\n");
-		System.out.printf("       emart       206-86-50913 °­Èñ¼®\n");
-		System.out.printf("                   ¿ëÀÎ ¼öÁö±¸ Æ÷Àº´ë·Î 552\n");
-		System.out.printf("\n¿µ¼öÁõ ¹ÌÁöÂü½Ã ±³È¯/È¯ºÒ ºÒ°¡\n");
-		System.out.printf("Á¤»ó»óÇ°¿¡ ÇÑÇÔ, 30ÀÏ ÀÌ³»(½Å¼± 7ÀÏ)\n");
-		System.out.printf("¡ØÀÏºÎ ºê·£µå¸ÅÀå Á¦¿Ü(¸ÅÀå °íÁö¹°ÂüÁ¶)\n");
-		System.out.printf("±³È¯/È¯ºÒ ±¸¸ÅÁ¡¿¡¼­ °¡´É(°áÁ¦Ä«µå ÁöÂü)\n");
+		System.out.printf("                   ì´ë§ˆíŠ¸ ì£½ì „ì  (031)888-1234\n");
+		System.out.printf("       emart       206-86-50913 ê°•í¬ì„\n");
+		System.out.printf("                   ìš©ì¸ ìˆ˜ì§€êµ¬ í¬ì€ëŒ€ë¡œ 552\n");
+		System.out.printf("\nì˜ìˆ˜ì¦ ë¯¸ì§€ì°¸ì‹œ êµí™˜/í™˜ë¶ˆ ë¶ˆê°€\n");
+		System.out.printf("ì •ìƒìƒí’ˆì— í•œí•¨, 30ì¼ ì´ë‚´(ì‹ ì„  7ì¼)\n");
+		System.out.printf("â€»ì¼ë¶€ ë¸Œëœë“œë§¤ì¥ ì œì™¸(ë§¤ì¥ ê³ ì§€ë¬¼ì°¸ì¡°)\n");
+		System.out.printf("êµí™˜/í™˜ë¶ˆ êµ¬ë§¤ì ì—ì„œ ê°€ëŠ¥(ê²°ì œì¹´ë“œ ì§€ì°¸)\n");
 		
-		System.out.printf("\n[±¸¸Å]%15.20s%26.20s\n", sdf.format(cal.getTime()), "POS:0011-9861");
+		System.out.printf("\n[êµ¬ë§¤]%15.20s%26.20s\n", sdf.format(cal.getTime()), "POS:0011-9861");
 		System.out.printf("------------------------------------------------\n");
-		System.out.printf("  »óÇ°¸í            ´Ü°¡      ¼ö·®         ±İ¾×\n");
+		System.out.printf("  ìƒí’ˆëª…            ë‹¨ê°€      ìˆ˜ëŸ‰         ê¸ˆì•¡\n");
 		System.out.printf("------------------------------------------------\n");
 		for (int i = 0; i < itemName.length; i++) {
 			String taxCheck = "";
@@ -69,5 +69,3 @@ public class Lecture5_6 {
 		return k08_temp;
 	}
 }
-
-

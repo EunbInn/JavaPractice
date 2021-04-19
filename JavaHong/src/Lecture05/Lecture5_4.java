@@ -1,4 +1,4 @@
-package JavaLecture5;
+package Lecture05;
 
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
@@ -37,9 +37,9 @@ public class Lecture5_4 {//클래스 선언
 		System.out.printf("대표자 : 유창신\n");//가게 대표명 출력
 		System.out.printf("%s%28.20s\n", "사업자 : 752-53-00558", "TEL : 7055695");//사업자번호 및 매장 전화번호 출력
 		System.out.printf("-------------------------------------------------\n");//구분선 출력
-		System.out.printf("%s%34.20s 원\n",k08_blank("금    액", 20), k08_df.format(k08_iOrigin));//미리 지정해둔 포맷으로 원가 출력
-		System.out.printf("%s%36.20s 원\n",k08_blank("부 가 세", 20), k08_df.format(k08_iTax));//미리 지정해둔 포맷으로 세금 출력
-		System.out.printf("%s%34.20s 원\n",k08_blank("합    계", 20), k08_df.format(k08_iPrice));//미리 지정해둔 포맷으로 총액 출력(입력받은 금액)
+		System.out.printf("%s%16.20s 원\n",k08_blank("금    액",15), k08_df.format(k08_iOrigin));//미리 지정해둔 포맷으로 원가 출력
+		System.out.printf("%s%16.20s 원\n",k08_blank("부 가 세", 15), k08_df.format(k08_iTax));//미리 지정해둔 포맷으로 세금 출력
+		System.out.printf("%s%16.20s 원\n",k08_blank("합    계", 15), k08_df.format(k08_iPrice));//미리 지정해둔 포맷으로 총액 출력(입력받은 금액)
 		System.out.printf("-------------------------------------------------\n");//구분선 출력
 		System.out.printf("우리카드\n");//이용 카드 출력
 		System.out.printf("%s%13.11s\n", "카드번호 : 5387-20**-****-4613(S)", "일시불");//카드번호 및 결제 방식 출력
