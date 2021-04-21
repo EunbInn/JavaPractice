@@ -67,49 +67,49 @@ public class Lecture5_6 {//클래스선언
 			
 		}
 		
-		k08_origin = (int)(k08_sumTax / 1.1);
-		k08_tax = k08_sumTax - k08_origin;
-		int k08_totalSum = k08_sumNoTax + k08_sumTax;
+		k08_origin = (int)(k08_sumTax / 1.1);//과세항목 누적값을 1.1로 나눈 몫을 원가 변수에 저장
+		k08_tax = k08_sumTax - k08_origin;//세금 = 총액 - 원가
+		int k08_totalSum = k08_sumNoTax + k08_sumTax;//total sum 변수에 비과세항목 가격과 과세항목 가격 누적값의 합 저장
 		
-		System.out.printf("\n%24.25s%19.16s\n","총 품목 수량", k08_itemName.length + "");
-		System.out.printf("%25.25s%19.16s\n","(*)면 세  물 품", k08_df.format(k08_sumNoTax));
-		System.out.printf("%25.25s%19.16s\n","과 세  물 품", k08_df.format(k08_origin));
-		System.out.printf("%26.25s%19.16s\n","부   가   세", k08_df.format(k08_tax));
-		System.out.printf("%27.25s%19.16s\n","합        계", k08_df.format(k08_totalSum));
-		System.out.printf("  결 재 대 상 금 액%29.20s\n", k08_df.format(k08_totalSum));
-		System.out.printf("------------------------------------------------\n");
-		System.out.printf("0012 KEB 하나              541707**0484/35860658\n");
-		System.out.printf("카드결제(IC)%24.20s/%8.10s\n","일시불",k08_df.format(k08_totalSum));
-		System.out.printf("------------------------------------------------\n");
-		System.out.printf("                 [신세계 포인트 적립]\n");
-		System.out.printf("김*비 고객님의 포인트 현황입니다.\n");
-		System.out.printf("금회발생포인트               9350**9995      164\n");
-		System.out.printf("누계(가용)포인트                 5,637(   5,473) \n");
-		System.out.printf("*신세계포인트 유효기간은 2년입니다.\n");
-		System.out.printf("------------------------------------------------\n");
-		System.out.printf("       구매금액기준 무료주차시간 자동부여\n");
-		System.out.printf("차량번호 :%37.30s\n","34저****");
-		System.out.printf("차량번호 :%38.30s\n","2021-03-03 20:20:04");
-		System.out.printf("------------------------------------------------\n");
-		System.out.printf("캐셔:084599 양00%32s\n","1150");
-		System.out.printf("                 l|l|l|l|l|l|l|\n");
-		System.out.printf("          20210303/00119861/00164980/30");
+		System.out.printf("\n%24.25s%19.16s\n","총 품목 수량", k08_itemName.length + "");//총 물품 수량은 스트링 배열의 길이로 출력
+		System.out.printf("%25.25s%19.16s\n","(*)면 세  물 품", k08_df.format(k08_sumNoTax));//면세항목 누적값 출력
+		System.out.printf("%25.25s%19.16s\n","과 세  물 품", k08_df.format(k08_origin));//과세항목 원가 출력
+		System.out.printf("%26.25s%19.16s\n","부   가   세", k08_df.format(k08_tax));//과세항목의 세금 출력
+		System.out.printf("%27.25s%19.16s\n","합        계", k08_df.format(k08_totalSum));//합계에 총 금액 출력
+		System.out.printf("  결 재 대 상 금 액%29.20s\n", k08_df.format(k08_totalSum));// 결제 대상 금액에 합계와 동일하게 총 금액 출력
+		System.out.printf("------------------------------------------------\n");//구분선 출력
+		System.out.printf("0012 KEB 하나              541707**0484/35860658\n");//결제 카드 정보 출력
+		System.out.printf("카드결제(IC)%24.20s/%8.10s\n","일시불",k08_df.format(k08_totalSum));//결제 방식 출력
+		System.out.printf("------------------------------------------------\n");//구분선 출력
+		System.out.printf("                 [신세계 포인트 적립]\n");//포인트 정립내역 출력
+		System.out.printf("김*비 고객님의 포인트 현황입니다.\n");//포인트 관련 안내 출력
+		System.out.printf("금회발생포인트               9350**9995      164\n");//금번 발생 포인트 출력
+		System.out.printf("누계(가용)포인트                 5,637(   5,473) \n");//총 사용 가능한 포인트 출력
+		System.out.printf("*신세계포인트 유효기간은 2년입니다.\n");//포인트 유효기간 안내
+		System.out.printf("------------------------------------------------\n");//구분선 출력
+		System.out.printf("       구매금액기준 무료주차시간 자동부여\n");//무료 주차안내 출력
+		System.out.printf("차량번호 :%37.30s\n","34저****");//차량번호 출력
+		System.out.printf("입차시간 :%38.30s\n","2021-03-03 20:20:04");//입차시간 출력
+		System.out.printf("------------------------------------------------\n");//구분선 출력
+		System.out.printf("캐셔:084599 양00%32s\n","1150");//담당 캐셔 정보 출력
+		System.out.printf("                 l|l|l|l|l|l|l|\n");//바코드 임의
+		System.out.printf("          20210303/00119861/00164980/30");//바코드 정보 출력
 
 	}
 	
-	public static String strForm(String k08_temp, int k08_length) {
+	public static String strForm(String k08_temp, int k08_length) { //스트링타입과 인티저타입을 인자로 받아 스트링을 리턴하는 매서드 선언
 		
-		if (k08_temp.length() > k08_length) {
-			k08_temp = k08_temp.substring(0,k08_length);
+		if (k08_temp.length() > k08_length) {//인자로 받은 스트링 길이가 인자로 받은 숫자보다 크다면
+			k08_temp = k08_temp.substring(0,k08_length);//그 숫자까지 서브스트링으로 문자열 자르기
 			
 			}
-		
+		//인자로 받은 숫자 * 2 값에서 자른 문자열의 바이트 길이를 뺀 만큼을 blank라는 변수에 저장
 		int k08_blank = (k08_length * 2) - k08_temp.getBytes().length;
 
-		for (int k08_i = 0; k08_i < k08_blank; k08_i++) {
-			k08_temp = k08_temp + " ";
+		for (int k08_i = 0; k08_i < k08_blank; k08_i++) {//0~blank까지 반복문 실행
+			k08_temp = k08_temp + " ";//반복문 실행하는 동안 문자열에 공백 추가
 		}
 		
-		return k08_temp;
+		return k08_temp;//편집이 완료된 문자열 리턴
 	}
 }
