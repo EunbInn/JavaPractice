@@ -3,53 +3,97 @@ package Lecture05;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-
-public class Lecture5_6 {
+//20210415 ±èÀººñ ÀÌ¸¶Æ® ¿µ¼öÁõ Ãâ·Â
+public class Lecture5_6 {//Å¬·¡½º¼±¾ğ
 	
-	public static void main(String[] args) {
-		Calendar cal = Calendar.getInstance();
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-		DecimalFormat df = new DecimalFormat("###,###,###,###");
-		String[] itemName = {"ì—°ì„¸ ë§ˆì¹´ë‹¤ë¯¸ì•„ ì´ˆì½”ìš°ìœ ","ë¹„ë¹„ê³  ê¹€ì¹˜ë§Œë‘","ì•ˆì£¼ì•¼ ë¶ˆë§‰ì°½ë³¶ìŒ","ë‹¤í¬ì´ˆì½”ë§ˆë“¤ë Œ 500g","ì‚¼ë¦½ ì´‰ì´‰í•œ ëª¨ë‹ ì‹ë¹µ",
-				"ì‹ë¬¼ë‚˜ë¼ ë°”ë””ì›Œì‹œ ë¼ë²¤ë” 200ml","ìƒ¤í”„ë€ ì„¬ìœ ìœ ì—°ì œ ë¦¬í•„ìš© 500ml","ê¼¬ë¶ì¹© ì´ˆì½”ì¸„ëŸ¬ìŠ¤ë§›","ì½”ì¹´ì½œë¼ ì œë¡œì½œë¼ 330ml","í•˜ì–€ë‚˜ë¼ ì ë³´ë¡¤íœ´ì§€(ê·¸ë¦°) 30ì…",
-				"","","","","","","","","","","","","","","","","","","","","",""};
-		int[] itemPrice = {1200,4000,7300,5600,3000,
-				7250,8000,1500,1200,21000,
-				0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
-		int[] itemNum = {1,4,3,1,1,
-				1,2,3,2,1,
-				0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
-		boolean[] TaxFree = {true,true,false,true,false,true,false,true,true,true,
+	public static void main(String[] args) {//¸ŞÀÎ¿¡¼­ ½ÃÀÛ
+		Calendar k08_cal = Calendar.getInstance();//½Ã½ºÅÛ ³¯Â¥¸¦ ¹Ş±âÀ§ÇØ calendar getinstance ¸¦ ÀÌ¿ë
+		SimpleDateFormat k08_sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm"); //¿µ¼öÁõ ³¯Â¥ Æ÷¸ËÀ» Âü°íÇÏ¿© Æ÷¸Ë ¼³Á¤
+		DecimalFormat k08_df = new DecimalFormat("###,###,###,###");//°¡°İÀÇ ¼¼ÀÚ¸®¸¶´Ù ÄŞ¸¶¸¦ Ãâ·ÂÇØÁÖ±â À§ÇØ ¼ıÀÚ Æ÷¸Ë ¼³Á¤
+		String[] k08_itemName = {"¿¬¼¼ ¸¶Ä«´Ù¹Ì¾Æ ÃÊÄÚ¿ìÀ¯","ºñºñ°í ±èÄ¡¸¸µÎ","¾ÈÁÖ¾ß ºÒ¸·Ã¢ººÀ½","´ÙÅ©ÃÊÄÚ¸¶µé·» 500g","»ï¸³ ÃËÃËÇÑ ¸ğ´× ½Ä»§",
+							"½Ä¹°³ª¶ó ¹Ùµğ¿ö½Ã ¶óº¥´õ 200ml","»şÇÁ¶õ ¼¶À¯À¯¿¬Á¦ ¸®ÇÊ¿ë 500ml","²¿ºÏÄ¨ ÃÊÄÚÃò·¯½º¸À","ÄÚÄ«Äİ¶ó Á¦·ÎÄİ¶ó 330ml",
+							"ÇÏ¾á³ª¶ó Á¡º¸·ÑÈŞÁö(±×¸°) 30ÀÔ","°¡³ªÃÊÄİ¸´ ¸¶ÀÏµå(·¹µå)","¿À·¹¿ÀÁî ½Ã¸®¾ó ¸¶½Ã¸á·Î¿ì","±Û¶ó½ºµ¥ÄÚ 12»ö","¹Ì¹ÌÀÇ Àå³­°¨ »óÀÚ",
+							"È¨µ¥ÄÚ ¿ø¸ñ º¸¼®ÇÔ(·ÎÁî)","±Û·¹ÀÌÁî µµ³Ó ½ºÄûÁî","¸»¶û¸»¶û ½½¶óÀÓ(¿»·Î¿ì)","¿ä¸®º¸°íÁ¶¸®ºÁµµÁ¶¸®Æş",
+							"Å¬¸°ÇÏ¿ì½º ºøÀÚ·ç ³ì»ö 100cm","¿å½ÇÃ»¼Ò ¼¼Á¤ ¶ô½º 200ml","·Ñ¸®·Ñ¸®·Ñ¸®ÆË ÃÊÄÚ","¹ö´Ï´Ï ½ºÆ®·Îº£¸® 500ml","Å×¶ó ¸ÆÁÖ 500ml",
+							"ÁıÆíÇÑ¼¼»ó ¾çÀº³¿ºñ s","ÁıÆíÇÑ¼¼»ó ¾çÀº³¿ºñ m","ºñºñ°í ¾ö¸¶¼Õ¸À ¹Ì¿ª±¹","ÆÈµµ ºñºö¸é 5°³ÀÔ","Áø¶ó¸é ¼øÇÑ¸À 5°³ÀÔ",
+							"¿À¶Ñ±â 3ºĞÄ«·¹ ¼øÇÑ¸À","¿À¶Ñ±â 3ºĞÂ¥Àå","ÃáÃµ ´ß°¥ºñ ¸Å¿î¾ç³ä","½Ì½Ì ½ÓÃ¤¼Ò ¼¼Æ® 100g"}; //½ºÆ®¸µ ¹è¿­¿¡ 30°³ ÀÌ»óÀÇ ¾ÆÀÌÅÛ¸í ÀÔ·Â
+		int[] k08_itemPrice = {1200,4000,7300,5600,3000,
+							7250,8000,1500,1200,21000,
+							1500,5000,8420,4560,1200,7200,
+							8000,3250,7000,12000,980,
+							15000,15600,4500,5700,1420,5500,
+							7200,1200,1200,8500,3550}; //ÀÎÆ¼Àú ¹è¿­¿¡ ½ºÆ®¸µ ¹è¿­°ú µ¿ÀÏÇÑ Å©±â·Î ¾ÆÀÌÅÛÀÇ °ª ÀÔ·Â
+		int[] k08_itemNum = {1,4,3,1,1,1,2,3,2,1,//ÀÎÆ¼Àú ¹è¿­¿¡ ½ºÆ®¸µ ¹è¿­°ú µ¿ÀÏÇÑ Å©±â·Î ¾ÆÀÌÅÛ ¼ö·® ÀÔ·Â
+						10,2,1,2,1,2,4,3,1,2,
+						1,1,2,3,1,2,1,1,4,2,1,1};
+		boolean[] k08_TaxFree = {true,true,false,true,false,true,false,true,true,true,// ºÒ¸° ¹è¿­¿¡ ½ºÆ®¸µ ¹è¿­°ú µ¿ÀÏÇÑ Å©±â·Î true false ÀÔ·Â -> ÇØ´ç °ªÀº ¸é¼¼, °ú¼¼ Ç×¸ñ ±¸ºĞÀ» À§ÇÔ
 				true,true,false,true,true,true,true,true,true,true,
 				true,true,false,true,true,true,true,true,true,true,true,false};
+		int k08_origin = 0; //origin price ÀÎÆ¼Àú Å¸ÀÔ ¼±¾ğ ¹× ÃÊ±âÈ­ 
+		int k08_tax = 0;//tax ÀÎÆ¼Àú Å¸ÀÔ ¼±¾ğ ¹× ÃÊ±âÈ­
 		
-		System.out.printf("                   ì´ë§ˆíŠ¸ ì£½ì „ì  (031)888-1234\n");
-		System.out.printf("       emart       206-86-50913 ê°•í¬ì„\n");
-		System.out.printf("                   ìš©ì¸ ìˆ˜ì§€êµ¬ í¬ì€ëŒ€ë¡œ 552\n");
-		System.out.printf("\nì˜ìˆ˜ì¦ ë¯¸ì§€ì°¸ì‹œ êµí™˜/í™˜ë¶ˆ ë¶ˆê°€\n");
-		System.out.printf("ì •ìƒìƒí’ˆì— í•œí•¨, 30ì¼ ì´ë‚´(ì‹ ì„  7ì¼)\n");
-		System.out.printf("â€»ì¼ë¶€ ë¸Œëœë“œë§¤ì¥ ì œì™¸(ë§¤ì¥ ê³ ì§€ë¬¼ì°¸ì¡°)\n");
-		System.out.printf("êµí™˜/í™˜ë¶ˆ êµ¬ë§¤ì ì—ì„œ ê°€ëŠ¥(ê²°ì œì¹´ë“œ ì§€ì°¸)\n");
 		
-		System.out.printf("\n[êµ¬ë§¤]%15.20s%26.20s\n", sdf.format(cal.getTime()), "POS:0011-9861");
-		System.out.printf("------------------------------------------------\n");
-		System.out.printf("  ìƒí’ˆëª…            ë‹¨ê°€      ìˆ˜ëŸ‰         ê¸ˆì•¡\n");
-		System.out.printf("------------------------------------------------\n");
-		for (int i = 0; i < itemName.length; i++) {
-			String taxCheck = "";
-			if (TaxFree[i] == false) {
-				taxCheck = "* " + itemName[i];
-			} else {
-				taxCheck = "  " + itemName[i];
+		
+		System.out.printf("                   ÀÌ¸¶Æ® Á×ÀüÁ¡ (031)888-1234\n"); //ÁöÁ¡ ¹× ÁöÁ¡ ¹øÈ£ Ãâ·Â
+		System.out.printf("       emart       206-86-50913 °­Èñ¼®\n");//ÀÌ¸¶Æ® »ç¾÷ÀÚ¹øÈ£ ¹× ´ëÇ¥ÀÚ¸í Ãâ·Â
+		System.out.printf("                   ¿ëÀÎ ¼öÁö±¸ Æ÷Àº´ë·Î 552\n");//ÁöÁ¡ ÁÖ¼Ò Ãâ·Â
+		System.out.printf("\n¿µ¼öÁõ ¹ÌÁöÂü½Ã ±³È¯/È¯ºÒ ºÒ°¡\n");//È¯ºÒ ºÒ°¡³»¿ë Ãâ·Â
+		System.out.printf("Á¤»ó»óÇ°¿¡ ÇÑÇÔ, 30ÀÏ ÀÌ³»(½Å¼± 7ÀÏ)\n");//È¯ºÒ ±â°£ ¾È³» Ãâ·Â
+		System.out.printf("¡ØÀÏºÎ ºê·£µå¸ÅÀå Á¦¿Ü(¸ÅÀå °íÁö¹°ÂüÁ¶)\n");//Á¦¿Ü¸ÅÀå °ü·Ã Ãâ·Â
+		System.out.printf("±³È¯/È¯ºÒ ±¸¸ÅÁ¡¿¡¼­ °¡´É(°áÁ¦Ä«µå ÁöÂü)\n");//±³È¯È¯ºÒ ¹æ¹ı Ãâ·Â
+		System.out.printf("\n[±¸¸Å]%15.20s%26.20s\n", k08_sdf.format(k08_cal.getTime()), "POS:0011-9861");//±¸¸ÅÀÏ°ú Æ÷½º µî·Ï¹øÈ£ Ãâ·Â
+		System.out.printf("------------------------------------------------\n");//±¸ºĞ¼± Ãâ·Â
+		System.out.printf("  »óÇ°¸í                      ´Ü°¡   ¼ö·®   ±İ¾×\n");//°ª ±¸ºĞ Ä«Å×°í¸® Ãâ·Â
+		System.out.printf("------------------------------------------------\n");//±¸ºĞ¼± Ãâ·Â
+		int k08_sumNoTax = 0;//ºñ°ú¼¼Ç×¸ñ ÃÑ °¡°İ º¯¼ö ÀÎÆ¼Àú·Î ¼±¾ğ
+		int k08_sumTax = 0;//°ú¼¼Ç×¸ñ ÃÑ °¡°İ º¯¼ö ÀÎÆ¼Àú·Î ¼±¾ğ 
+		for (int k08_i = 0; k08_i < k08_itemName.length; k08_i++) { //0~»óÇ°¸í ÀúÀåÇÑ ½ºÆ®¸µ ¹è¿­ Å©±â¸¸Å­ ¹İº¹¹® ½ÇÇà
+			String k08_taxCheck = "";//½ºÆ®¸µ º¯¼ö ¼±¾ğ ¹× ÃÊ±âÈ­
+			if (k08_TaxFree[k08_i] == false) {//ºÒ¸° ¹è¿­ tax freeÀÇ i¹øÂ° ÀúÀå°ªÀÌ falseÀÏ¶§
+				k08_taxCheck = "* " + k08_itemName[k08_i];//¾ÆÀÌÅÛ ÀÌ¸§ ¾Õ¿¡ * Ãß°¡
+				k08_sumNoTax += k08_itemPrice[k08_i];//no tax ÇÕ°è °ª ´©Àû
+				
+			} else {//ºÒ¸° ¹è¿­ tzx freeÀÇ i¹øÂ° ÀúÀå °ªÀÌ trueÀÏ ¶§,
+				k08_taxCheck = "  " + k08_itemName[k08_i];//¾ÆÀÌÅÛ ÀÌ¸§ ¾Õ¿¡ °ø¹é Ãß°¡(*ºÙÀÎ °ª°ú ±æÀÌ¸¦ ¸ÂÃß±â À§ÇÔ)
+				k08_sumTax += k08_itemPrice[k08_i];//taxÇ×¸ñ ÇÕ°è°ª ´©Àû
 			}
-			System.out.printf("%s%10.12s%5.5s%10.12s\n",strForm(taxCheck, 14), df.format(itemPrice[i]), itemNum[i] + "", df.format(itemPrice[i] * itemNum[i]));
-			if ((i + 1) % 5 == 0) {
+			//»óÇ°¸í, ´Ü°¡, ¼ö·®, ±İ¾× Ãâ·Â(±İ¾×°ú °ü·ÃµÈ ¼ıÀÚ´Â ¹Ì¸® ÁöÁ¤ÇØµĞ ÄŞ¸¶ Ãß°¡ Æ÷¸ËÀ¸·Î º¯°æÇÏ¿© Ãâ·Â
+			System.out.printf("%s%10.12s%5.5s%9.12s\n",strForm(k08_taxCheck, 12), 
+					k08_df.format(k08_itemPrice[k08_i]), k08_itemNum[k08_i] + "", k08_df.format(k08_itemPrice[k08_i] * k08_itemNum[k08_i]));
+			if ((k08_i + 1) % 5 == 0) {//i + 1À» 5·Î ³ª´« ³ª¸ÓÁö °ªÀÌ 0ÀÏ ¶§, ±¸ºĞ¼±°ú ÁÙ¹Ù²Ş Ãâ·Â
 				System.out.printf("------------------------------------------------\n");
 			}
+			
+			
 		}
+		
+		k08_origin = (int)(k08_sumTax / 1.1);
+		k08_tax = k08_sumTax - k08_origin;
+		int k08_totalSum = k08_sumNoTax + k08_sumTax;
+		
+		System.out.printf("\n%24.25s%19.16s\n","ÃÑ Ç°¸ñ ¼ö·®", k08_itemName.length + "");
+		System.out.printf("%25.25s%19.16s\n","(*)¸é ¼¼  ¹° Ç°", k08_df.format(k08_sumNoTax));
+		System.out.printf("%25.25s%19.16s\n","°ú ¼¼  ¹° Ç°", k08_df.format(k08_origin));
+		System.out.printf("%26.25s%19.16s\n","ºÎ   °¡   ¼¼", k08_df.format(k08_tax));
+		System.out.printf("%27.25s%19.16s\n","ÇÕ        °è", k08_df.format(k08_totalSum));
+		System.out.printf("  °á Àç ´ë »ó ±İ ¾×%29.20s\n", k08_df.format(k08_totalSum));
 		System.out.printf("------------------------------------------------\n");
+		System.out.printf("0012 KEB ÇÏ³ª              541707**0484/35860658\n");
+		System.out.printf("Ä«µå°áÁ¦(IC)%24.20s/%8.10s\n","ÀÏ½ÃºÒ",k08_df.format(k08_totalSum));
 		System.out.printf("------------------------------------------------\n");
+		System.out.printf("                 [½Å¼¼°è Æ÷ÀÎÆ® Àû¸³]\n");
+		System.out.printf("±è*ºñ °í°´´ÔÀÇ Æ÷ÀÎÆ® ÇöÈ²ÀÔ´Ï´Ù.\n");
+		System.out.printf("±İÈ¸¹ß»ıÆ÷ÀÎÆ®               9350**9995      164\n");
+		System.out.printf("´©°è(°¡¿ë)Æ÷ÀÎÆ®                 5,637(   5,473) \n");
+		System.out.printf("*½Å¼¼°èÆ÷ÀÎÆ® À¯È¿±â°£Àº 2³âÀÔ´Ï´Ù.\n");
 		System.out.printf("------------------------------------------------\n");
+		System.out.printf("       ±¸¸Å±İ¾×±âÁØ ¹«·áÁÖÂ÷½Ã°£ ÀÚµ¿ºÎ¿©\n");
+		System.out.printf("Â÷·®¹øÈ£ :%37.30s\n","34Àú****");
+		System.out.printf("Â÷·®¹øÈ£ :%38.30s\n","2021-03-03 20:20:04");
+		System.out.printf("------------------------------------------------\n");
+		System.out.printf("Ä³¼Å:084599 ¾ç00%32s\n","1150");
+		System.out.printf("                 l|l|l|l|l|l|l|\n");
+		System.out.printf("          20210303/00119861/00164980/30");
 
 	}
 	
@@ -60,9 +104,9 @@ public class Lecture5_6 {
 			
 			}
 		
-		int k08_blank = 24 - k08_temp.getBytes().length;
+		int k08_blank = (k08_length * 2) - k08_temp.getBytes().length;
 
-		for (int i = 0; i < k08_blank; i++) {
+		for (int k08_i = 0; k08_i < k08_blank; k08_i++) {
 			k08_temp = k08_temp + " ";
 		}
 		

@@ -29,16 +29,11 @@ public class Lecture5_5 { // 클래스 선언
 		int k08_sumPrice = k08_price1 + k08_price2 + k08_price3; // integer type의 변수 선언 및 아이템 가격의 총합 저장
 		int k08_originPrice = (int) (k08_sumPrice / 1.1); // total price = original price + tax -> tp = orp + (orp *
 															// 0.1) -> orp = tp / 1.1
-		int k08_taxPrice = 0; // tax값을 저장할 변수를 integer type으로 선언 및 0으로 변수 값 저장;
+		int k08_taxPrice = k08_sumPrice - k08_originPrice; // tax값 = 총 합 - 총합의 원가
 
 		// tax의 경우 원가의 10%로 계산하는데, 10%한 값에 소수점 이하 자리가 있을 경우(정수형으로 변환한 값과 비교)와 아닐 경우 계산을
 		// 달리한다
 		// tax는 소수점 아래 수를 취급하지 않고 +1로 올림하여 받는 까닭이다.
-		if ((int) (k08_originPrice * 0.1) < (k08_originPrice * 0.1)) {
-			k08_taxPrice = (int) (k08_originPrice * 0.1) + 1;// 소수점 이하 자리가 있을 경우 원가에 10% 곱하여 정수형 변환한 값에 + 1
-		} else {
-			k08_taxPrice = (int) (k08_originPrice * 0.1);// 소수점 이하 자리가 없을 경우 원가에 10%곱한 값을 정수형으로 변환
-		}
 
 		System.out.printf("\n                \"국민가게다이소\"\n"); // 한줄 개행 후 제목부분 출력 큰따옴표는 역슬레시를 사용하여 표현
 		System.out.printf("(주)아성다이소_분당서현점\n");// 지점명 출력
