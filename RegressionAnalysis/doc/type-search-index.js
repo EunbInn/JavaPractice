@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","u":"allclasses-index.html"},{"p":"Regression","l":"Main"},{"p":"Regression","l":"MultiRegressionUtils"},{"p":"Regression","l":"PrintResults"},{"p":"Regression","l":"SimpleRegressionUtils"}];updateSearchResults();
